@@ -1,0 +1,2063 @@
+[
+  {
+    "id": "baseline-normal",
+    "result": {
+      "selected_version": 1,
+      "declared_version": 1,
+      "catalog_version": 1,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "commit-at-catalog-note",
+    "result": {
+      "selected_version": 1,
+      "declared_version": 1,
+      "catalog_version": 1,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "commit-after-last-file",
+    "result": {
+      "selected_version": 1,
+      "declared_version": 1,
+      "catalog_version": 1,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "dead-candidate-sweep-during-copy",
+    "result": {
+      "selected_version": 2,
+      "declared_version": 2,
+      "catalog_version": 2,
+      "expected_rows": [
+        [
+          "north",
+          "n3",
+          30
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n3",
+          30
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "action": "gc.plan",
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.selected",
+          "version": 2,
+          "objects": [
+            "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "action": "gc.sweep",
+          "removed": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 2
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 2
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": "fresh-collect-after-rereference",
+    "result": {
+      "selected_version": 3,
+      "declared_version": 3,
+      "catalog_version": 3,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "action": "commit",
+          "batch": "return",
+          "version": 3
+        },
+        {
+          "action": "gc.collect",
+          "removed": [
+            "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.selected",
+          "version": 3,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 3
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 3
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "fail-index-past-end",
+    "result": {
+      "selected_version": 1,
+      "declared_version": 1,
+      "catalog_version": 1,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "late-catalog-commit",
+    "result": {
+      "selected_version": 1,
+      "declared_version": 1,
+      "catalog_version": 2,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": null,
+      "complete": true,
+      "backup_error": null,
+      "restore_error": "FileNotFoundError",
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "return-payload-masks-catalog-skew",
+    "result": {
+      "selected_version": 1,
+      "declared_version": 1,
+      "catalog_version": 2,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "return",
+          "version": 2
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "double-commit-masks-version-skew",
+    "result": {
+      "selected_version": 1,
+      "declared_version": 1,
+      "catalog_version": 3,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "action": "commit",
+          "batch": "return",
+          "version": 3
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "skew-and-dead-sweep-combined",
+    "result": {
+      "selected_version": 2,
+      "declared_version": 2,
+      "catalog_version": 3,
+      "expected_rows": [
+        [
+          "north",
+          "n3",
+          30
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n3",
+          30
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "action": "gc.plan",
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.selected",
+          "version": 2,
+          "objects": [
+            "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 3
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl"
+        },
+        {
+          "action": "gc.sweep",
+          "removed": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 2
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 2
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "6731eb0f96f3e07991566375662729790d878df78eb6d6f170937d5d8a806d3a.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": "skew-and-stale-sweep-combined",
+    "result": {
+      "selected_version": 3,
+      "declared_version": null,
+      "catalog_version": null,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": null,
+      "complete": false,
+      "backup_error": "FileNotFoundError",
+      "restore_error": "FileNotFoundError",
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "action": "gc.plan",
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "return",
+          "version": 3
+        },
+        {
+          "phase": "backup.selected",
+          "version": 3,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 4
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "action": "gc.sweep",
+          "removed": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 3
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "error": "FileNotFoundError",
+          "phase": "backup.failed"
+        }
+      ]
+    }
+  },
+  {
+    "id": "stale-candidate-revived-before-copy",
+    "result": {
+      "selected_version": 3,
+      "declared_version": null,
+      "catalog_version": null,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": null,
+      "complete": false,
+      "backup_error": "FileNotFoundError",
+      "restore_error": "FileNotFoundError",
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "action": "gc.plan",
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "return",
+          "version": 3
+        },
+        {
+          "phase": "backup.selected",
+          "version": 3,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "action": "gc.sweep",
+          "removed": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 3
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "error": "FileNotFoundError",
+          "phase": "backup.failed"
+        }
+      ]
+    }
+  },
+  {
+    "id": "stale-candidate-revived-after-copy",
+    "result": {
+      "selected_version": 3,
+      "declared_version": 3,
+      "catalog_version": 3,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "complete": true,
+      "backup_error": null,
+      "restore_error": null,
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "action": "gc.plan",
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "return",
+          "version": 3
+        },
+        {
+          "phase": "backup.selected",
+          "version": 3,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "action": "gc.sweep",
+          "removed": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.complete",
+          "version": 3
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 3
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "phase": "backup.complete",
+          "version": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": "stale-candidate-swept-before-backup",
+    "result": {
+      "selected_version": 3,
+      "declared_version": null,
+      "catalog_version": null,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": null,
+      "complete": false,
+      "backup_error": "FileNotFoundError",
+      "restore_error": "FileNotFoundError",
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "action": "gc.plan",
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "return",
+          "version": 3
+        },
+        {
+          "action": "gc.sweep",
+          "removed": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.selected",
+          "version": 3,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 3
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "error": "FileNotFoundError",
+          "phase": "backup.failed"
+        }
+      ]
+    }
+  },
+  {
+    "id": "reclaim-during-copy-no-protection",
+    "result": {
+      "selected_version": 1,
+      "declared_version": null,
+      "catalog_version": null,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": null,
+      "complete": false,
+      "backup_error": "FileNotFoundError",
+      "restore_error": "FileNotFoundError",
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "action": "commit",
+          "batch": "change",
+          "version": 2
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        },
+        {
+          "action": "gc.collect",
+          "removed": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+          ]
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "error": "FileNotFoundError",
+          "phase": "backup.failed"
+        }
+      ]
+    }
+  },
+  {
+    "id": "failure-at-first-copy",
+    "result": {
+      "selected_version": 1,
+      "declared_version": null,
+      "catalog_version": null,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": null,
+      "complete": false,
+      "backup_error": "OSError",
+      "restore_error": "FileNotFoundError",
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "error": "OSError",
+          "phase": "backup.failed"
+        }
+      ]
+    }
+  },
+  {
+    "id": "failure-at-second-copy",
+    "result": {
+      "selected_version": 1,
+      "declared_version": null,
+      "catalog_version": null,
+      "expected_rows": [
+        [
+          "north",
+          "n1",
+          10
+        ],
+        [
+          "north",
+          "n2",
+          0
+        ],
+        [
+          "south",
+          "s1",
+          20
+        ]
+      ],
+      "actual_rows": null,
+      "complete": false,
+      "backup_error": "OSError",
+      "restore_error": "FileNotFoundError",
+      "events": [
+        {
+          "action": "commit",
+          "batch": "initial",
+          "version": 1
+        },
+        {
+          "phase": "backup.selected",
+          "version": 1,
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ]
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.after_file",
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+        },
+        {
+          "phase": "backup.before_file",
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl"
+        }
+      ],
+      "backup_events": [
+        {
+          "objects": [
+            "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+            "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl"
+          ],
+          "phase": "backup.selected",
+          "version": 1
+        },
+        {
+          "phase": "backup.catalog"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "index": 0,
+          "object": "2b0e713cfc134eb43e7470ecffbd07415e077bdd4f647b1b689c6421ede89be1.jsonl",
+          "phase": "backup.after_file"
+        },
+        {
+          "index": 1,
+          "object": "2c32600e5f1903187cade73eb9c7a2ddb9850135c063797a408639972b1e4e1f.jsonl",
+          "phase": "backup.before_file"
+        },
+        {
+          "error": "OSError",
+          "phase": "backup.failed"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,612 @@
+[
+  {
+    "id": "baseline-normal",
+    "spec": {},
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 9,
+        "text": "destination.mkdir(parents=True, exist_ok=False)"
+      },
+      {
+        "path": "backup.py",
+        "line": 35,
+        "text": "payload = (lake.data / name).read_bytes()"
+      },
+      {
+        "path": "backup.py",
+        "line": 42,
+        "text": "(destination / \"complete.json\").write_text(json.dumps(receipt, sort_keys=True), encoding=\"utf-8\")"
+      },
+      {
+        "path": "backup.py",
+        "line": 54,
+        "text": "receipt = json.loads((source / \"complete.json\").read_text(encoding=\"utf-8\"))"
+      }
+    ]
+  },
+  {
+    "id": "commit-at-catalog-note",
+    "spec": {
+      "at": {
+        "backup.catalog": [
+          {
+            "commit": "change"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 26,
+        "text": "clone_catalog(lake.root / \"catalog.db\", destination / \"catalog.db\")"
+      },
+      {
+        "path": "backup.py",
+        "line": 27,
+        "text": "note(\"backup.catalog\")"
+      },
+      {
+        "path": "backup.py",
+        "line": 35,
+        "text": "payload = (lake.data / name).read_bytes()"
+      }
+    ]
+  },
+  {
+    "id": "commit-after-last-file",
+    "spec": {
+      "at": {
+        "backup.after_file:1": [
+          {
+            "commit": "change"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 26,
+        "text": "clone_catalog(lake.root / \"catalog.db\", destination / \"catalog.db\")"
+      },
+      {
+        "path": "backup.py",
+        "line": 40,
+        "text": "note(\"backup.after_file\", index=index, object=name)"
+      },
+      {
+        "path": "backup.py",
+        "line": 42,
+        "text": "(destination / \"complete.json\").write_text(json.dumps(receipt, sort_keys=True), encoding=\"utf-8\")"
+      }
+    ]
+  },
+  {
+    "id": "dead-candidate-sweep-during-copy",
+    "spec": {
+      "before": [
+        {
+          "commit": "change"
+        },
+        {
+          "gc": "plan"
+        }
+      ],
+      "at": {
+        "backup.before_file:0": [
+          {
+            "gc": "sweep"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "reclaim.py",
+        "line": 6,
+        "text": "candidates = sorted(path.name for path in lake.data.glob(\"*.jsonl\") if path.name not in live)"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 18,
+        "text": "path.unlink()"
+      },
+      {
+        "path": "backup.py",
+        "line": 32,
+        "text": "note(\"backup.before_file\", index=index, object=name)"
+      }
+    ]
+  },
+  {
+    "id": "fresh-collect-after-rereference",
+    "spec": {
+      "before": [
+        {
+          "commit": "change"
+        },
+        {
+          "commit": "return"
+        },
+        {
+          "gc": "collect"
+        }
+      ]
+    },
+    "locations": [
+      {
+        "path": "reclaim.py",
+        "line": 5,
+        "text": "live = {entry[\"object\"] for entry in lake.entries(c, version)}"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 6,
+        "text": "candidates = sorted(path.name for path in lake.data.glob(\"*.jsonl\") if path.name not in live)"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 25,
+        "text": "return sweep(lake, plan(lake))"
+      }
+    ]
+  },
+  {
+    "id": "fail-index-past-end",
+    "spec": {
+      "fail_at": 2
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 31,
+        "text": "for index, name in enumerate(names):"
+      },
+      {
+        "path": "backup.py",
+        "line": 33,
+        "text": "if fail_at == index:"
+      },
+      {
+        "path": "backup.py",
+        "line": 42,
+        "text": "(destination / \"complete.json\").write_text(json.dumps(receipt, sort_keys=True), encoding=\"utf-8\")"
+      }
+    ]
+  },
+  {
+    "id": "late-catalog-commit",
+    "spec": {
+      "at": {
+        "backup.selected": [
+          {
+            "commit": "change"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 22,
+        "text": "version = c.execute(\"SELECT version FROM head\").fetchone()[0]"
+      },
+      {
+        "path": "backup.py",
+        "line": 24,
+        "text": "c.commit()"
+      },
+      {
+        "path": "backup.py",
+        "line": 26,
+        "text": "clone_catalog(lake.root / \"catalog.db\", destination / \"catalog.db\")"
+      },
+      {
+        "path": "lake.py",
+        "line": 109,
+        "text": "src.backup(dst)"
+      }
+    ]
+  },
+  {
+    "id": "return-payload-masks-catalog-skew",
+    "spec": {
+      "at": {
+        "backup.selected": [
+          {
+            "commit": "return"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 26,
+        "text": "clone_catalog(lake.root / \"catalog.db\", destination / \"catalog.db\")"
+      },
+      {
+        "path": "backup.py",
+        "line": 42,
+        "text": "(destination / \"complete.json\").write_text(json.dumps(receipt, sort_keys=True), encoding=\"utf-8\")"
+      },
+      {
+        "path": "lake.py",
+        "line": 79,
+        "text": "if not path.exists():"
+      }
+    ]
+  },
+  {
+    "id": "double-commit-masks-version-skew",
+    "spec": {
+      "at": {
+        "backup.selected": [
+          {
+            "commit": "change"
+          },
+          {
+            "commit": "return"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 22,
+        "text": "version = c.execute(\"SELECT version FROM head\").fetchone()[0]"
+      },
+      {
+        "path": "backup.py",
+        "line": 26,
+        "text": "clone_catalog(lake.root / \"catalog.db\", destination / \"catalog.db\")"
+      },
+      {
+        "path": "backup.py",
+        "line": 42,
+        "text": "(destination / \"complete.json\").write_text(json.dumps(receipt, sort_keys=True), encoding=\"utf-8\")"
+      }
+    ]
+  },
+  {
+    "id": "skew-and-dead-sweep-combined",
+    "spec": {
+      "before": [
+        {
+          "commit": "change"
+        },
+        {
+          "gc": "plan"
+        }
+      ],
+      "at": {
+        "backup.selected": [
+          {
+            "commit": "change"
+          }
+        ],
+        "backup.before_file:1": [
+          {
+            "gc": "sweep"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 22,
+        "text": "version = c.execute(\"SELECT version FROM head\").fetchone()[0]"
+      },
+      {
+        "path": "backup.py",
+        "line": 26,
+        "text": "clone_catalog(lake.root / \"catalog.db\", destination / \"catalog.db\")"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 6,
+        "text": "candidates = sorted(path.name for path in lake.data.glob(\"*.jsonl\") if path.name not in live)"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 18,
+        "text": "path.unlink()"
+      }
+    ]
+  },
+  {
+    "id": "skew-and-stale-sweep-combined",
+    "spec": {
+      "before": [
+        {
+          "commit": "change"
+        },
+        {
+          "gc": "plan"
+        },
+        {
+          "commit": "return"
+        }
+      ],
+      "at": {
+        "backup.selected": [
+          {
+            "commit": "change"
+          }
+        ],
+        "backup.before_file:1": [
+          {
+            "gc": "sweep"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 22,
+        "text": "version = c.execute(\"SELECT version FROM head\").fetchone()[0]"
+      },
+      {
+        "path": "backup.py",
+        "line": 26,
+        "text": "clone_catalog(lake.root / \"catalog.db\", destination / \"catalog.db\")"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 6,
+        "text": "candidates = sorted(path.name for path in lake.data.glob(\"*.jsonl\") if path.name not in live)"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 18,
+        "text": "path.unlink()"
+      }
+    ]
+  },
+  {
+    "id": "stale-candidate-revived-before-copy",
+    "spec": {
+      "before": [
+        {
+          "commit": "change"
+        },
+        {
+          "gc": "plan"
+        },
+        {
+          "commit": "return"
+        }
+      ],
+      "at": {
+        "backup.before_file:1": [
+          {
+            "gc": "sweep"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "reclaim.py",
+        "line": 5,
+        "text": "live = {entry[\"object\"] for entry in lake.entries(c, version)}"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 6,
+        "text": "candidates = sorted(path.name for path in lake.data.glob(\"*.jsonl\") if path.name not in live)"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 17,
+        "text": "if path.exists():"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 18,
+        "text": "path.unlink()"
+      },
+      {
+        "path": "lake.py",
+        "line": 79,
+        "text": "if not path.exists():"
+      }
+    ]
+  },
+  {
+    "id": "stale-candidate-revived-after-copy",
+    "spec": {
+      "before": [
+        {
+          "commit": "change"
+        },
+        {
+          "gc": "plan"
+        },
+        {
+          "commit": "return"
+        }
+      ],
+      "at": {
+        "backup.after_file:1": [
+          {
+            "gc": "sweep"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "reclaim.py",
+        "line": 6,
+        "text": "candidates = sorted(path.name for path in lake.data.glob(\"*.jsonl\") if path.name not in live)"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 18,
+        "text": "path.unlink()"
+      },
+      {
+        "path": "backup.py",
+        "line": 40,
+        "text": "note(\"backup.after_file\", index=index, object=name)"
+      },
+      {
+        "path": "lake.py",
+        "line": 79,
+        "text": "if not path.exists():"
+      }
+    ]
+  },
+  {
+    "id": "stale-candidate-swept-before-backup",
+    "spec": {
+      "before": [
+        {
+          "commit": "change"
+        },
+        {
+          "gc": "plan"
+        },
+        {
+          "commit": "return"
+        },
+        {
+          "gc": "sweep"
+        }
+      ]
+    },
+    "locations": [
+      {
+        "path": "reclaim.py",
+        "line": 6,
+        "text": "candidates = sorted(path.name for path in lake.data.glob(\"*.jsonl\") if path.name not in live)"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 17,
+        "text": "if path.exists():"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 18,
+        "text": "path.unlink()"
+      },
+      {
+        "path": "lake.py",
+        "line": 79,
+        "text": "if not path.exists():"
+      },
+      {
+        "path": "backup.py",
+        "line": 35,
+        "text": "payload = (lake.data / name).read_bytes()"
+      }
+    ]
+  },
+  {
+    "id": "reclaim-during-copy-no-protection",
+    "spec": {
+      "at": {
+        "backup.selected": [
+          {
+            "commit": "change"
+          }
+        ],
+        "backup.before_file:1": [
+          {
+            "gc": "collect"
+          }
+        ]
+      }
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 24,
+        "text": "c.commit()"
+      },
+      {
+        "path": "backup.py",
+        "line": 26,
+        "text": "clone_catalog(lake.root / \"catalog.db\", destination / \"catalog.db\")"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 6,
+        "text": "candidates = sorted(path.name for path in lake.data.glob(\"*.jsonl\") if path.name not in live)"
+      },
+      {
+        "path": "reclaim.py",
+        "line": 18,
+        "text": "path.unlink()"
+      }
+    ]
+  },
+  {
+    "id": "failure-at-first-copy",
+    "spec": {
+      "fail_at": 0
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 9,
+        "text": "destination.mkdir(parents=True, exist_ok=False)"
+      },
+      {
+        "path": "backup.py",
+        "line": 33,
+        "text": "if fail_at == index:"
+      },
+      {
+        "path": "backup.py",
+        "line": 34,
+        "text": "raise OSError(\"injected copy failure\")"
+      },
+      {
+        "path": "backup.py",
+        "line": 49,
+        "text": "(destination / \"events.json\").write_text(json.dumps(events, sort_keys=True), encoding=\"utf-8\")"
+      },
+      {
+        "path": "backup.py",
+        "line": 54,
+        "text": "receipt = json.loads((source / \"complete.json\").read_text(encoding=\"utf-8\"))"
+      }
+    ]
+  },
+  {
+    "id": "failure-at-second-copy",
+    "spec": {
+      "fail_at": 1
+    },
+    "locations": [
+      {
+        "path": "backup.py",
+        "line": 33,
+        "text": "if fail_at == index:"
+      },
+      {
+        "path": "backup.py",
+        "line": 38,
+        "text": "(destination / \"data\" / name).write_bytes(payload)"
+      },
+      {
+        "path": "backup.py",
+        "line": 46,
+        "text": "events.append({\"phase\": \"backup.failed\", \"error\": type(exc).__name__})"
+      },
+      {
+        "path": "backup.py",
+        "line": 54,
+        "text": "receipt = json.loads((source / \"complete.json\").read_text(encoding=\"utf-8\"))"
+      }
+    ]
+  }
+]
